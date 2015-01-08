@@ -16,6 +16,11 @@
 \renewcommand{\thesubsection}{\S\arabic{section}.\arabic{subsection}}
 \renewcommand{\theparagraph}{\S\arabic{section}.\arabic{subsection}.\arabic{paragraph}}
 
+\let\dparagraph\paragraph
+\renewcommand*\paragraph[1]{\dparagraph{#1}\mbox{}\\}
+
+\setcounter{secnumdepth}{5}
+
 \setcounter{section}{-1} % Start section count on zero
 
 \begin{document}
