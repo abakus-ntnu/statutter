@@ -2,7 +2,7 @@
 
 Her finner du latex kildekoden til statuttene til Abakus Linjeforening.
 Send gjerne endringsforslag via pull-requests, les mer om reglene for 
-statuttendringer i [contributions.md](contributions.md).
+statuttendringer i [CONTRIBUTING.md](CONTRIBUTING.md).
 
 # Bygg pdf for statuttene
 
