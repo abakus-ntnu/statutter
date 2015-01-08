@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-
+\usepackage[T1]{fontenc}
 \usepackage[pdftex]{graphicx} 
 
 \usepackage[norsk]{babel}
@@ -10,6 +10,13 @@
 
 \setlength{\parskip}{.5em}
 \setlength{\parindent}{0pt}
+
+% Add a § symbol to each section, subsection and paragraph
+\renewcommand{\thesection}{\S\arabic{section}}
+\renewcommand{\thesubsection}{\S\arabic{section}.\arabic{subsection}}
+\renewcommand{\theparagraph}{\S\arabic{section}.\arabic{subsection}.\arabic{paragraph}}
+
+\setcounter{section}{-1} % Start section count on zero
 
 \begin{document}
 \begin{center}
