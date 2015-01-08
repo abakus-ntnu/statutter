@@ -11,15 +11,10 @@
 \setlength{\parskip}{.5em}
 \setlength{\parindent}{0pt}
 
-% Add a § symbol to each section, subsection and paragraph
+% Add a § symbol to each section, subsection and subsubsection
 \renewcommand{\thesection}{\S\arabic{section}}
 \renewcommand{\thesubsection}{\S\arabic{section}.\arabic{subsection}}
-\renewcommand{\theparagraph}{\S\arabic{section}.\arabic{subsection}.\arabic{paragraph}}
-
-\let\dparagraph\paragraph
-\renewcommand*\paragraph[1]{\dparagraph{#1}\mbox{}\\}
-
-\setcounter{secnumdepth}{5}
+\renewcommand{\thesubsubsection}{\S\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
 \setcounter{section}{-1} % Start section count on zero
 
