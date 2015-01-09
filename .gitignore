@@ -9,3 +9,7 @@ logs/
 *.blg
 *.bak
 *.out
+
+gh-pages/index.html
+gh-pages/statutter.pdf
+gh-pages/_site

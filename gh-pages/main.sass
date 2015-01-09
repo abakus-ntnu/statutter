@@ -1,0 +1,58 @@
+---
+---
+
+$gray: #333
+$red: #b11b11
+
+$text-color: #fafafa
+
+body
+  padding: 0
+  margin: 0
+  background: $gray
+  font-family: Helvetica, sans-serif
+  font-size: 16px
+  line-height: 1.6em
+  color: $text-color
+  font-weight: 100
+
+  counter-reset: h1counter
+
+a
+  color: $text-color
+
+.header
+  font-size: 3em
+  line-height: 1.4em
+  text-align: center
+  padding: .6em 0
+  border-bottom: 6px solid $red
+
+  .subtitle
+    font-size: .4em
+    line-height: 1.2em
+
+.content-wrapper
+  max-width: 800px
+  width: 90%
+  margin: 1em auto
+
+h1
+  margin-top: 1em
+  counter-reset: h2counter
+
+h1:before
+  content: '§ ' counter(h1counter) '\0000a0\0000a0'
+  counter-reset: h2counter
+
+h1:not(:first-child):before
+  counter-increment: h1counter
+
+h2:before
+  content: '§ ' counter(h1counter) '.' counter(h2counter) '\0000a0\0000a0'
+  counter-increment: h2counter
+  counter-reset: h3counter
+
+h3:before
+  content: '§ ' counter(h1counter) '.' counter(h2counter) '.' counter(h3counter) '\0000a0\0000a0'
+  counter-increment: h3counter
