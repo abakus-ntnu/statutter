@@ -9,7 +9,7 @@ TEX = $(shell find . -name "*.tex")
 
 all: statutter.pdf
 
-test: all
+test: clean statutter.pdf
 
 statutter.pdf: $(TEX)
 	@ test -d logs || mkdir logs
