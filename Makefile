@@ -4,16 +4,19 @@ else
 	OPEN='see'
 endif
 
-all: open
+# Used to check if any of the tex files have been changed
+TEX = $(shell find . -name "*.tex")
 
-test: compile
+all: statutter.pdf
 
-compile:
+test: clean statutter.pdf
+
+statutter.pdf: $(TEX)
 	@ test -d logs || mkdir logs
 	@ pdflatex --jobname=statutter -halt-on-error main.tex >> logs/compile \
 	  && echo "Compiled report" || (cat logs/compile && fail)
 
-open: compile
+open: statutter.pdf
 	$(OPEN) statutter.pdf
 
 clean:
@@ -27,11 +30,11 @@ publish: clean gh-pages/index.html gh-pages/statutter.pdf
 	ghp-import gh-pages
 	git push origin gh-pages -f
 
-gh-pages/index.html:
+gh-pages/index.html: content.tex
 	echo "---\nlayout: default\n---" > gh-pages/index.html
 	pandoc -f latex -t html content.tex >> gh-pages/index.html
 
-gh-pages/statutter.pdf: compile
+gh-pages/statutter.pdf: statutter.pdf
 	cp statutter.pdf gh-pages/.
 
-.PHONY: compile open clean publish
+.PHONY: open clean publish
