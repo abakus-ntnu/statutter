@@ -21,11 +21,11 @@ etter offentliggjøringen.
 
 ## Innsending av forslag til endringer
 
-Det er to måter å sende inn forslag på det beste er å lage en pull-request på
-dette repoet. Dersom du ikke har noen erfaring med Git, Latex og Github så er
-ikke det noe problem. Da er det bare å sende en epost til abakus@abakus.no, med
-ditt forslag. I det tilfelle vil Hovedstyret lage en pull-request med din endring
-for deg. 
+Det er to måter å sende inn forslag på: pull-request og epost. Det beste er å
+lage en pull-request på dette repoet. Dersom du ikke har noen erfaring med Git,
+Latex og Github så er ikke det noe problem. Da er det bare å sende en epost til
+abakus@abakus.no, med ditt forslag. I det tilfelle vil Hovedstyret lage en
+pull-request med din endring for deg. 
 
 ### Lage pull-request
 Hvis du ikke har jobbet mye med git og github, men har lyst til å prøve å lage
