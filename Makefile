@@ -4,11 +4,14 @@ else
 	OPEN='see'
 endif
 
+# Used to check if any of the tex files have been changed
+TEX = $(shell find . -name "*.tex")
+
 all: statutter.pdf
 
 test: all
 
-statutter.pdf: main.tex
+statutter.pdf: $(TEX)
 	@ test -d logs || mkdir logs
 	@ pdflatex --jobname=statutter -halt-on-error main.tex >> logs/compile \
 	  && echo "Compiled report" || (cat logs/compile && fail)
