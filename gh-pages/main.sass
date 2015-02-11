@@ -3,7 +3,7 @@
 
 $gray: #333
 $red: #b11b11
-
+$spacing: '\0000a0\0000a0'
 $text-color: #fafafa
 
 body
@@ -16,10 +16,11 @@ body
   color: $text-color
   font-weight: 100
 
-  counter-reset: h1counter
+  counter-reset: h1counter h2counter h3counter
 
 a
   color: $text-color
+
 
 .header
   font-size: 3em
@@ -41,18 +42,21 @@ h1
   margin-top: 1em
   counter-reset: h2counter
 
-h1:before
-  content: '§ ' counter(h1counter) '\0000a0\0000a0'
-  counter-reset: h2counter
+  &:not(:first-child)
+    counter-increment: h1counter
 
-h1:not(:first-child):before
-  counter-increment: h1counter
+  &:before
+    content: '§ ' counter(h1counter) $spacing
 
-h2:before
-  content: '§ ' counter(h1counter) '.' counter(h2counter) '\0000a0\0000a0'
-  counter-increment: h2counter
+h2
   counter-reset: h3counter
+  counter-increment: h2counter
 
-h3:before
-  content: '§ ' counter(h1counter) '.' counter(h2counter) '.' counter(h3counter) '\0000a0\0000a0'
+  &:before
+    content: '§ ' counter(h1counter) '.' counter(h2counter) $spacing
+
+h3
   counter-increment: h3counter
+
+  &:before
+    content: '§ ' counter(h1counter) '.' counter(h2counter) '.' counter(h3counter) $spacing
