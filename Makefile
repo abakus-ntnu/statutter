@@ -11,7 +11,7 @@ all: $(ABAKUS).pdf $(FOND).pdf
 
 test: clean all jekyll
 
-%.pdf: *.tex
+%.pdf: %.tex
 	@ test -d logs || mkdir logs
 	@ pdflatex -halt-on-error $<  >> logs/compile \
 	  && echo "Compiled $@" || (cat logs/compile && fail)
@@ -23,7 +23,7 @@ $(FOND).tex: $(FOND)/*.tex
 	@touch $@
 
 open: $(ABAKUS).pdf $(FOND).pdf
-	$(OPEN) $(ABAKUS).pdf
+	$(OPEN) $(FOND).pdf $(ABAKUS).pdf
 
 clean:
 	rm -f *.log *.aux *.lof *.pdf *.toc *.lot *.out
