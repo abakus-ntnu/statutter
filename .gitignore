@@ -11,5 +11,7 @@ logs/
 *.out
 
 gh-pages/index.html
-gh-pages/statutter.pdf
+gh-pages/fond/index.html
+gh-pages/abakus-statutter.pdf
+gh-pages/fond-statutter.pdf
 gh-pages/_site
