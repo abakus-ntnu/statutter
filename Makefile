@@ -51,7 +51,7 @@ gh-pages/fond:
 	@mkdir -p $@
 
 gh-pages/%.pdf: %.pdf
-	cp $> $@
+	cp $< $@
 
 
 .PHONY: open clean publish jekyll
