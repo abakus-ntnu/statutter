@@ -13,9 +13,9 @@ test: clean all jekyll
 
 %.pdf: %.tex
 	@ test -d logs || mkdir logs
-	@ pdflatex -halt-on-error $<  >> logs/compile \
+	@ pdflatex -halt-on-error -interaction=nonstopmode $<  >> logs/compile \
 	  && echo "Compiled $@" || (cat logs/compile && fail)
-	@ pdflatex -halt-on-error $< >> logs/compile2 \
+	@ pdflatex -halt-on-error -interaction=nonstopmode $< >> logs/compile2 \
 	  && echo "Compiled again $@" || (cat logs/compile2 && fail)
 
 $(ABAKUS).tex: $(ABAKUS)/*.tex
