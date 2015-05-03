@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[norsk]{babel}
 
-\usepackage[pdftex]{graphicx} 
+\usepackage[pdftex]{graphicx}
 
 \usepackage{hyperref}
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
@@ -15,6 +15,11 @@
 \renewcommand{\thesection}{\S\arabic{section}}
 \renewcommand{\thesubsection}{\S\arabic{section}.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\S\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\makeatletter
+     \renewcommand*\l@section{\@dottedtocline{1}{0em}{1.8em}}
+     \renewcommand*\l@subsection{\@dottedtocline{1}{1.8em}{2.2em}}
+\makeatother
 
 \setcounter{section}{-1} % Start section count on zero
 \setcounter{tocdepth}{1}
