@@ -19,6 +19,14 @@ opprinnelige intensjon må endringen behandles på generalforsamling. Endringer
 som ikke blir disputert i løpet av denne perioden trer i kraft to -2- uker
 etter offentliggjøringen.
 
+### Godkjenne endringer
+[lgtm.co](https://lgtm.co) brukes for å passe på at minst to personer godkjenner
+eventuelle endringsforslag (pull requests) før de merges. Kun personer listet
+i filen [MAINTAINERS](MAINTAINERS) har mulighet til å gjøre dette, i form av en
+"LGTM"-kommentar ("looks good to me"). For mer informasjon, se
+[LGTMs dokumentasjon](https://lgtm.co/docs/overview/#approvals:68f80267fa3a50980dbb745a782b8dca).
+
+
 ## Innsending av forslag til endringer
 
 Det er to måter å sende inn forslag på: pull-request og epost. Det beste er å
