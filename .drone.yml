@@ -1,0 +1,6 @@
+pipeline:
+  tests:
+    image: abakus/latex-build
+    when:
+      event: push
+    commands: make test
