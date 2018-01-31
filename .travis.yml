@@ -1,0 +1,5 @@
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq texlive texlive-font-utils texlive-lang-european
+script:
+  - make test
