@@ -12,11 +12,9 @@ all: $(ABAKUS).pdf $(FOND).pdf
 test: clean all jekyll
 
 %.pdf: %.tex
-	@ test -d logs || mkdir logs
-	@ pdflatex -halt-on-error -interaction=nonstopmode $<  >> logs/compile \
+	@ mkdir -p logs
+	@ latexmk -pdf $<  >> logs/compile \
 	  && echo "Compiled $@" || (cat logs/compile && fail)
-	@ pdflatex -halt-on-error -interaction=nonstopmode $< >> logs/compile2 \
-	  && echo "Compiled again $@" || (cat logs/compile2 && fail)
 
 $(ABAKUS).tex: $(ABAKUS)/*.tex
 	@touch $@
@@ -28,9 +26,9 @@ open: $(ABAKUS).pdf $(FOND).pdf
 	$(OPEN) $(FOND).pdf $(ABAKUS).pdf
 
 clean:
-	rm -f *.log *.aux *.lof *.pdf *.toc *.lot *.out
+	rm -f *.log *.aux *.lof *.pdf *.toc *.lot *.out *.fdb_latexmk *.fls
 	rm -rf logs
-	rm -f gh-pages/index.html gh-pages/fond/index.html gh-pages/$(ABAKUS).pdf gh-pages/$(FOND).pdf
+	rm -f gh-pages/index.html gh-pages/fond/index.html gh-pages/*.pdf
 
 jekyll: clean gh-pages/index.html gh-pages/fond/index.html gh-pages/$(ABAKUS).pdf gh-pages/$(FOND).pdf
 
