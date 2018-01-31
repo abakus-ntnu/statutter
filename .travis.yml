@@ -6,6 +6,7 @@ script:
 deploy:
   provider: pages
   fqgd: statutter.abakus.no
+  local-dir: gh-pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
