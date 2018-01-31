@@ -14,7 +14,7 @@ brew cask install mactex
 
 Ubuntu:
 ```bash
-sudo apt-get install texlive texlive-font-utils texlive-lang-european
+sudo apt-get install texlive texlive-font-utils texlive-lang-european latexmk
 ```
 
 ### Kompilere PDF
@@ -23,7 +23,7 @@ make
 ```
 
 ## Publisering
-[GitHub Pages](https://pages.github.com/) brukes til å hoste [statutter.abakus.no](https://statutter.abakus.no).
-Opplastning av siste versjon skjer automatisk av
-[Travis](https://travis-ci.org/abakus-ntnu/statutter) når commits blir pushet
-til master.
+[GitHub Pages](https://pages.github.com/) brukes til å hoste
+[statutter.abakus.no](https://statutter.abakus.no). Opplastning av siste versjon
+skjer automatisk av [Travis](https://travis-ci.org/abakus-ntnu/statutter) når
+commits blir pushet til master.
