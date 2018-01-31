@@ -14,8 +14,7 @@ brew cask install mactex
 
 Ubuntu:
 ```bash
-sudo apt-get install texlive texlive-font-utils texlive-lang-european
-sudo tlmgr install latexmk
+sudo apt-get install texlive texlive-font-utils texlive-lang-european latexmk
 ```
 
 ### Kompilere PDF
