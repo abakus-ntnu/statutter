@@ -34,11 +34,6 @@ clean:
 
 jekyll: clean gh-pages/index.html gh-pages/fond/index.html gh-pages/$(ABAKUS).pdf gh-pages/$(FOND).pdf
 
-publish: jekyll
-	rm -rf gh-pages/_site
-	ghp-import gh-pages
-	git push origin gh-pages -f
-
 gh-pages/index.html: $(ABAKUS).tex
 	@echo "---\nlayout: abakus\n---" > gh-pages/index.html
 	@pandoc -f latex -t html $(ABAKUS)/innhold.tex >> gh-pages/index.html
@@ -55,5 +50,4 @@ gh-pages/fond:
 gh-pages/%.pdf: %.pdf
 	cp $< $@
 
-
-.PHONY: open clean publish jekyll
+.PHONY: open clean jekyll
