@@ -1,0 +1,14 @@
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq texlive texlive-font-utils texlive-lang-european pandoc
+script:
+  - make test
+deploy:
+  provider: pages
+  fqgd: statutter.abakus.no
+  local-dir: gh-pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
