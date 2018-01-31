@@ -6,10 +6,14 @@ statuttendringer i [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Bygg pdf for statuttene
 
-Dette fungerer kun om man har pdflatex.
-
+Installer avhengigheter (Ubuntu):
 ```bash
-make compile
+sudo apt-get install texlive texlive-font-utils texlive-lang-european
+```
+
+Kompiler PDF (krever pdflatex):
+```bash
+make all
 ```
 
 ## Publiser på github pages
