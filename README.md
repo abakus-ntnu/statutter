@@ -22,8 +22,28 @@ sudo apt-get install texlive texlive-font-utils texlive-lang-european latexmk
 make
 ```
 
-## Publisering
+## Nettside
+### Publisering
 [GitHub Pages](https://pages.github.com/) brukes til å hoste
 [statutter.abakus.no](https://statutter.abakus.no). Opplastning av siste versjon
 skjer automatisk av [Travis](https://travis-ci.org/abakus-ntnu/statutter) når
 commits blir pushet til master.
+
+### Lokal utvikling
+#### Avhengigheter
+macOS (krever [Homebrew](https://brew.sh/)):
+```bash
+brew install pandoc
+```
+
+Ubuntu:
+```bash
+sudo apt-get install pandoc
+```
+
+#### Bygging
+```bash
+make jekyll
+cd gh-pages
+bundle exec jekyll serve
+```
