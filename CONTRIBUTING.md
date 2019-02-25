@@ -7,12 +7,10 @@ endringer kan merges av en i Hovedstyret eller etter godkjenning fra
 Hovedstyret.
 
 >**§ 8.3.4.**   
-Hovedstyret har til enhver tid myndighet til å endre oppsett, utforming og
-formuleringer samt rette skrivefeil i Abakus sine statutter såfremt disse ikke
-endrer innholdet og betydningen i de aktuelle statuttene. Eventuelle
-endringsforslag må offentliggjøres 1. februar eller 1. september.
+Hovedstyret har til enhver tid myndighet til å gjøre redaksjonelle endringer
+i Abakus sine statutter. Eventuelle endringsforslag må offentliggjøres 1. februar eller 1. september.
 
-> Hovedstyret må redegjøre for de endringer de har gjort ved å offentliggjøre 
+> Hovedstyret må redegjøre for de endringer de har gjort ved å offentliggjøre
 disse på foreningens nettside. Dersom et medlem av Abakus gir skriftlig uttrykk
 til Hovedstyret innen to -2- uker om at en endring ikke ivaretar statuttens
 opprinnelige intensjon må endringen behandles på generalforsamling. Endringer
@@ -20,11 +18,8 @@ som ikke blir disputert i løpet av denne perioden trer i kraft to -2- uker
 etter offentliggjøringen.
 
 ### Godkjenne endringer
-[lgtm.co](https://lgtm.co) brukes for å passe på at minst to personer godkjenner
-eventuelle endringsforslag (pull requests) før de merges. Kun personer listet
-i filen [MAINTAINERS](MAINTAINERS) har mulighet til å gjøre dette, i form av en
-"LGTM"-kommentar ("looks good to me"). For mer informasjon, se
-[LGTMs dokumentasjon](https://lgtm.co/docs/overview/#approvals:68f80267fa3a50980dbb745a782b8dca).
+Minst én person med write access til repoet må godkjenne pull requests. Det er
+derfor viktig at listen med medlemmer holdes oppdatert.
 
 
 ## Innsending av forslag til endringer
@@ -33,7 +28,7 @@ Det er to måter å sende inn forslag på: pull-request og epost. Det beste er �
 lage en pull-request på dette repoet. Dersom du ikke har noen erfaring med Git,
 Latex og Github så er ikke det noe problem. Da er det bare å sende en epost til
 abakus@abakus.no, med ditt forslag. I det tilfelle vil Hovedstyret lage en
-pull-request med din endring for deg. 
+pull-request med din endring for deg.
 
 ### Lage pull-request
 Hvis du ikke har jobbet mye med git og github, men har lyst til å prøve å lage
@@ -42,7 +37,7 @@ en pull-request, så kan du følge denne guiden for å lage en pull-request.
 1. Finn filen du vil endre på [i repoet](https://github.com/abakus-ntnu/statutter).
 2. Trykk på redigerings-ikonet. Det er en blyant i øvre høyre hjørne av filen,
    ved siden av en søplebøtte.
-3. Gjør din endring og skriv en kommentar om hva som er endret under "Propose 
+3. Gjør din endring og skriv en kommentar om hva som er endret under "Propose
    file change" og trykk på knappen "Propose file change".
 4. Deretter vil det komme opp en side for å opprette en pull-request. Her er det
    en tittel boks og en beskrivelsestekstboks. Skriv din begrunnelse for endringen i
