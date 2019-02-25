@@ -8,8 +8,7 @@ Hovedstyret.
 
 >**§ 8.3.4.**   
 Hovedstyret har til enhver tid myndighet til å gjøre redaksjonelle endringer
-i Abakus sine statutter. Eventuelle endringsforslag må offentliggjøres
-1. februar eller 1. september.
+i Abakus sine statutter. Eventuelle endringsforslag må offentliggjøres 1. februar eller 1. september.
 
 > Hovedstyret må redegjøre for de endringer de har gjort ved å offentliggjøre
 disse på foreningens nettside. Dersom et medlem av Abakus gir skriftlig uttrykk
