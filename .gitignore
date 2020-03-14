@@ -10,7 +10,6 @@
 *.fot
 *.cb
 *.cb2
-*.pdf
 
 ## Intermediate documents:
 *.dvi
@@ -20,7 +19,6 @@
 *.ps
 report.pdf
 svg-inkscape/
-*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl

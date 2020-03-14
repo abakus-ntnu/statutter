@@ -1,4 +1,9 @@
-TIMESTAMP=`eval date +%Y`
+if [ -z "$ASSEMBLY_DATE" ]
+then
+   TIMESTAMP=`eval date +%d.%B.%Y`
+else
+   TIMESTAMP=$ASSEMBLY_DATE
+fi
 
 # Convert abakus LaTeX to html
 pandoc -f latex -t html \
@@ -15,8 +20,9 @@ pdflatex -halt-on-error abakus-statutter.tex
 pdflatex -halt-on-error abakus-statutter.tex
 pdflatex -pdf -halt-on-error -output-dir="/public" abakus-statutter.tex
 
-mkdir -p /public/$TIMESTAMP
-cp /public/*.pdf /public/$TIMESTAMP/
+# Store a copy of the pdf in the archive
+mkdir -p /public/archive/
+cp /public/*.pdf /public/archive/$TIMESTAMP.pdf
 
 # Clean up the Statutter directory, as it used to genereate fles
 rm -f /statutter/*.log \
