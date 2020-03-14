@@ -1,49 +1,51 @@
-# Abakus' statutter [![Build Status](https://travis-ci.org/abakus-ntnu/statutter.svg?branch=master)](https://travis-ci.org/abakus-ntnu/statutter)
+# Abakus' statutter
+
 Her finner du LaTeX-kildekoden til statuttene til Abakus Linjeforening.
 Send gjerne endringsforslag via pull-requests, les mer om reglene for
 statuttendringer i [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Bygging av PDF
-### Installering av pdfTeX
-pdfTeX kreves for å bygge statuttene. Det kan installeres på følgende måte:
+## Organisering
 
-macOS (krever [Homebrew](https://brew.sh/)):
-```bash
-brew cask install mactex
+`statutter` mappen inneholder kildekoden til statuttene, og er der du gjør endringene vedtatt av generalforsamlingen.
+
+`static` mappen inneholder statiske html template filer som blir brukt under generering av nettsiden.
+
+`public` mappen inneholder alt av output som docker containeren genererer. Denne mappen blir entrypoint for nettsiden, og det er disse html og css filene som blir hostet.
+
+## Bygging av statutter
+
+Alle statuttene bygges ved hjelp av et `docker` image. Dette bildet inneholder
+alle avhengigheter som trengs for å bygge både `pdf` og `html` versjon av statuttene.
+
+### Kjør bilde ved hjelp av følgende kommondo
+
+Den mounter de tre volumene `statutter, static og public` som blir brukt av bildet når den bygger statutter.
+
+I tilegg kan du sende inn `ASSEMBLY_DATE` som en variabel, og den genererte pdf filen som blir arkivert får dette navnet.
+
+```sh
+$ docker run --rm \
+    -v `pwd`/statutter:/statutter/ \
+    -v `pwd`/static:/static/ \
+    -v `pwd`/public:/public/ \
+    -e ASSEMBLY_DATE=01.januar.1970 \
+    abakus/statutter:latest
 ```
 
-Ubuntu:
-```bash
-sudo apt-get install texlive texlive-font-utils texlive-lang-european latexmk
+### Bygge bilde lokalt
+
+```sh
+$ docker build -t statutter .
 ```
 
-### Kompilere PDF
-```bash
-make
-```
+## Publisering av statutter
 
-## Nettside
-### Publisering
-[GitHub Pages](https://pages.github.com/) brukes til å hoste
-[statutter.abakus.no](https://statutter.abakus.no). Opplastning av siste versjon
-skjer automatisk av [Travis](https://travis-ci.org/abakus-ntnu/statutter) når
-commits blir pushet til master.
+Vi bruker [zeit](https://zeit.co/abakus-ntnu/statutter/) for å hoste statuttene på
+[statutter.abakus.no](https://statutter.abakus.no/). Du må ha innstallert
+[zeit-now](https://github.com/zeit/now) enten som vanlig `cli` eller gjennom `yarn` så du har
+tilgang til `now` kommandoen. I tilegg må du har tilgang til abakus-ntnu sin
+[org](https://zeit.co/abakus-ntnu) for å kunne deploye.
 
-### Lokal utvikling
-#### Avhengigheter
-macOS (krever [Homebrew](https://brew.sh/)):
-```bash
-brew install pandoc
-```
-
-Ubuntu:
-```bash
-sudo apt-get install pandoc
-```
-
-#### Bygging
-```bash
-make jekyll
-cd gh-pages
-bundle exec jekyll serve
+```sh
+$ now
 ```
