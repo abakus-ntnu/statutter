@@ -18,8 +18,6 @@ body
   color: $text-color
   font-weight: 100
 
-  counter-reset: h1counter h2counter h3counter
-
 a
   color: $link-color
   text-decoration: none
@@ -62,6 +60,9 @@ p
 
 h1
   counter-reset: h2counter
+
+  &:first-child
+    counter-reset: h1counter h2counter h3counter
 
   &:not(:first-child)
     margin-top: 1.5em
