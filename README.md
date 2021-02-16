@@ -1,49 +1,30 @@
-# Abakus' statutter [![Build Status](https://travis-ci.org/abakus-ntnu/statutter.svg?branch=master)](https://travis-ci.org/abakus-ntnu/statutter)
-Her finner du LaTeX-kildekoden til statuttene til Abakus Linjeforening.
-Send gjerne endringsforslag via pull-requests, les mer om reglene for
-statuttendringer i [CONTRIBUTING.md](CONTRIBUTING.md).
+# Abakus' statutter
 
-## Bygging av PDF
-### Installering av pdfTeX
-pdfTeX kreves for å bygge statuttene. Det kan installeres på følgende måte:
+Her finner du LaTeX-kildekoden til statuttene til Abakus Linjeforening. Send gjerne endringsforslag via pull-requests, les mer om reglene for statuttendringer i [CONTRIBUTING.md](CONTRIBUTING.md).
 
-macOS (krever [Homebrew](https://brew.sh/)):
-```bash
-brew cask install mactex
-```
+## Organisering
 
-Ubuntu:
-```bash
-sudo apt-get install texlive texlive-font-utils texlive-lang-european latexmk
-```
+`statutter` mappen inneholder kildekoden til statuttene.
 
-### Kompilere PDF
-```bash
-make
-```
+`static` mappen inneholder filer som blir brukt under generering av nettsiden.
 
-## Nettside
-### Publisering
-[GitHub Pages](https://pages.github.com/) brukes til å hoste
-[statutter.abakus.no](https://statutter.abakus.no). Opplastning av siste versjon
-skjer automatisk av [Travis](https://travis-ci.org/abakus-ntnu/statutter) når
-commits blir pushet til master.
+`public` mappen inneholder alt av output som docker containeren genererer. Denne mappen blir entrypoint for nettsiden, og det er disse html og css filene som brukere ser.
 
-### Lokal utvikling
-#### Avhengigheter
-macOS (krever [Homebrew](https://brew.sh/)):
-```bash
-brew install pandoc
-```
+## Bygging av statutter
 
-Ubuntu:
-```bash
-sudo apt-get install pandoc
-```
+Alle statuttene bygges ved hjelp av et `docker` image som har all programvare som trengs, samt et generering script som bruker denne programvaren. Scriptet bygger både `pdf` og `html` versjon av statuttene.
 
-#### Bygging
-```bash
-make jekyll
-cd gh-pages
-bundle exec jekyll serve
+### Kjør bilde ved hjelp av følgende kommando
+
+Den mounter de tre volumene `statutter, static og public` som blir brukt av bildet når den bygger statutter.
+
+I tillegg kan du sende inn `ASSEMBLY_DATE` som en variabel, og den genererte pdf filen som blir arkivert får dette navnet.
+
+```sh
+$ docker run --rm \
+    -v `pwd`/statutter:/statutter/ \
+    -v `pwd`/static:/static/ \
+    -v `pwd`/public:/public/ \
+    -e ASSEMBLY_DATE=01.januar.1970 \
+    abakus/statuttbuilder:latest
 ```
