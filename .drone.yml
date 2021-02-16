@@ -1,0 +1,25 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    image: abakus/statuttbuilder:latest
+    commands:
+      - ./generate.sh
+    when:
+      event:
+        - pull_request
+
+  - name: push
+    image: appleboy/drone-git-push
+    settings:
+      remote_name: origin
+      branch: dronebbuild
+      force: false
+      commit: true
+      commit_message: "DroneCI new build"
+    when:
+      event:
+        - pull_request

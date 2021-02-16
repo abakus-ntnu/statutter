@@ -1,8 +1,3 @@
-gh-pages/index.html
-gh-pages/fond/index.html
-gh-pages/_site
-logs/
-
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -15,7 +10,6 @@ logs/
 *.fot
 *.cb
 *.cb2
-*.pdf
 
 ## Intermediate documents:
 *.dvi
@@ -25,7 +19,6 @@ logs/
 *.ps
 report.pdf
 svg-inkscape/
-*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -224,4 +217,6 @@ TSWLatexianTemp*
 # expex forward references with \gathertags
 *-tags.tex
 
+.DS_Store
 
+.now
