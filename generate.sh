@@ -6,11 +6,11 @@ else
 fi
 
 # Convert abakus LaTeX to html
-pandoc -f latex -t html \
+pandoc -f latex -o /public/index.html \
   --include-in-header=/static/head.html \
   --include-before-body=/static/abakus.html \
   --include-after-body=/static/end.html \
-  abakus-statutter/innhold.tex > "/public/index.html"
+  abakus-statutter/innhold.tex
 
 # Move other static files to the public folder
 cp /static/main.css /static/abakule.jpg /public/
