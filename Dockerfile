@@ -11,7 +11,3 @@ RUN apt-get install -y --no-install-recommends \
       ghostscript
 
 WORKDIR /statutter
-
-COPY ./generate.sh /
-
-CMD /generate.sh

@@ -31,7 +31,7 @@ rm -f /statutter/*.log \
       /statutter/*.toc \
       /statutter/*.pdf # The result PDF is moved to /public by pdflatex
 
-# Clean up the Publig directory, as it used to genereate fles
+# Clean up the public directory, as it's used to genereate fles
 rm -f /public/*.log \
       /public/*.aux \
       /public/*.out \
