@@ -1,0 +1,29 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  # Should make a dry run on normal push that checks if the build will pass
+  #  - name: check
+  #    image: abakus/statuttbuilder:latest
+  #    commands:
+  #      - ./generate.sh
+  #    when:
+  #      event: [push]
+
+  - name: build
+    image: abakus/statuttbuilder:latest
+    commands:
+      - ./generate.sh
+    when:
+      event:
+        - pull_request
+
+          #  - name: push commit
+          #    image: appleboy/drone-git-push
+          #    settings:
+          #      remote_name: origin
+          #      force: false
+          #      commit: true
+          #      commit_message: "DroneCI new build"

@@ -52,6 +52,9 @@ p {
 h1 {
   counter-reset: h2counter;
 }
+h1:first-child {
+  counter-reset: h1counter h2counter h3counter;
+}
 h1:not(:first-child) {
   margin-top: 1.5em;
   counter-increment: h1counter;

@@ -1,9 +1,4 @@
-if [ -z "$ASSEMBLY_DATE" ]
-then
-   TIMESTAMP=`eval date +%d.%B.%Y`
-else
-   TIMESTAMP=$ASSEMBLY_DATE
-fi
+TIMESTAMP=`eval date +%d.%B.%Y`
 
 # Convert abakus LaTeX to html
 pandoc -f latex -o /public/index.html \
