@@ -91,3 +91,15 @@ h3
 
   &:before
     content: '§ ' counter(h1counter) '.' counter(h2counter) '.' counter(h3counter) $spacing
+
+
+.section-link
+  display: inline-block
+  margin-left: .5rem
+  color: var(--md-default-fg-color--lighter)
+  opacity: .1
+  transition: color .25s,opacity 125ms
+  font-size: 90%
+
+  &:hover
+    opacity: .5
