@@ -1,6 +1,11 @@
+dist: focal
+
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq texlive texlive-font-utils texlive-lang-european pandoc latexmk ghostscript
+  - mkdir -p ~/.local/bin
+  - export PATH=$HOME/.local/bin:$PATH
+  - travis_retry curl -L "https://github.com/LudvigHz/pandoc-section-links/releases/download/v0.1.0/pandoc-section-links-0.1.0-linux-amd64.tar.gz" | tar xz -C ~/.local/bin
 
 script:
   - make test

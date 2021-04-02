@@ -29,8 +29,8 @@ clean:
 jekyll: clean gh-pages/index.html gh-pages/$(ABAKUS).pdf
 
 gh-pages/index.html: $(ABAKUS).tex
-	@echo "---\nlayout: abakus\n---" > gh-pages/index.html
-	@pandoc -f latex -t html $(ABAKUS)/innhold.tex >> gh-pages/index.html
+	@echo "---\nlayout: abakus\ntitle: Abakus' statutter\n---" > gh-pages/index.html
+	@pandoc --filter pandoc-section-links -f latex -t html $(ABAKUS)/innhold.tex >> gh-pages/index.html
 	@echo "Created $@"
 
 gh-pages/%.pdf: %.pdf
